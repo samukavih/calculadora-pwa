@@ -174,6 +174,23 @@
         .then(()=>console.log('Service Worker registrado.'))
         .catch(err=>console.log('Erro SW:', err));
     }
+    const themeToggle = document.getElementById('themeToggle');
+let darkMode = true; // Começa no modo escuro
+
+themeToggle.addEventListener('click', () => {
+  darkMode = !darkMode;
+
+  if(darkMode){
+    document.documentElement.style.setProperty('--bg', '#0f1226');
+    document.documentElement.style.setProperty('--panel', '#171a35');
+    document.documentElement.style.setProperty('--ink', '#f7f8ff');
+  } else {
+    document.documentElement.style.setProperty('--bg', '#f5f5f5');
+    document.documentElement.style.setProperty('--panel', '#e0e0e0');
+    document.documentElement.style.setProperty('--ink', '#111');
+  }
+});
+
   </script>
 </body>
 </html>
