@@ -6,32 +6,46 @@
   <title>Calculadora</title>
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#171a35" />
-  <style>
-    /* --- estilos da calculadora (mesmos do código anterior) --- */
-    :root{
-      --bg: #0f1226;
-      --panel: #171a35;
-      --ink: #f7f8ff;
-      --muted: #aab0d5;
-      --accent: #7c91ff;
-      --accent-2: #2dd4bf;
-      --warn: #ff7c7c;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 24px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: radial-gradient(1200px 800px at 20% -10%, #2b315f 0, transparent 60%),
-                  radial-gradient(1200px 800px at 120% 120%, #1a1e3c 0, transparent 60%),
-                  var(--bg);
-      color: var(--ink);
-      display:grid; place-items:center;
-      padding: 24px;
-    }
-    /* ... resto do CSS igual ao código anterior ... */
+  <style> .keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.key {
+  padding: 20px 0;
+  font-size: 1.5rem;
+  border-radius: var(--radius);
+  background-color: var(--panel);
+  color: var(--ink);
+  border: none;
+  box-shadow: var(--shadow);
+}
+
+.key.op {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.key.equals {
+  background-color: var(--accent-2);
+  color: #fff;
+  grid-column: span 2;
+}
+
+.display {
+  background-color: var(--panel);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: right;
+  font-size: 2rem;
+  min-height: 70px;
+}
+
   </style>
 </head>
 <body>
